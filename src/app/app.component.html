@@ -1,0 +1,9 @@
+<!-- <app-product-form></app-product-form> -->
+<div style="margin-bottom: 20px;">
+<label for="" (click)="changediv('a')"><input type="radio" >A</label>
+<label for="" (click)="changediv('b')"><input type="radio" >B</label>
+</div>
+
+<p *ngIf="optA">option A</p>
+<p *ngIf="optB">option B</p>
+<router-outlet></router-outlet>

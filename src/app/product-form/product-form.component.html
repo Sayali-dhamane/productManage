@@ -1,0 +1,27 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()"  class="forms" >
+
+    <label for="name" class="lable">Name
+    <input type="text" class="input" id="name" [(ngModel)]="product.name" name="name" #name="ngModel" required>
+</label><div class="text" *ngIf="name.invalid && name.touched">Name is required</div><br>
+
+    <label class="lable" for="price">Price
+    <input type="number" class="input" id="price" [(ngModel)]="product.price" name="price" #price="ngModel" required>
+</label><div class="text" *ngIf="price.invalid && price.touched">Price is required</div><br>
+
+    <label class="lable" for="category">category
+    <select class="input" name="category" id="category" [(ngModel)]="product.category" required>
+        <option value="Eletronics" selected>Eletronics</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Books">Books</option>
+    </select></label><br>
+    
+
+    <div style="display: flex;gap: 20px;">
+    <input style="    height: 20px;
+    width: 25px;" type="checkbox"  id="instock" [(ngModel)]="product.instock" name="instock" required>
+    <label class="lable" for="instock">Instock</label>
+</div>
+
+<button type="submit" class="button" [disabled]="form.invalid">Add Product</button>
+</form>
+<app-product></app-product>

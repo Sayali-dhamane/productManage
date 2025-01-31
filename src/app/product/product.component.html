@@ -1,0 +1,33 @@
+<h1 style="text-align: center;">PRODUCTS</h1>
+<div *ngIf="isupdate" style="text-align: center;background-color: rgba(200, 194, 194, 0.482);">
+    <label for="">name<input type="text" [(ngModel)]="updatedname"></label> <br>
+    <label for="">price<input type="text" [(ngModel)]="updatedPrice"></label><br> 
+    <button (click)="upadateProducts()">Upadte Product</button>
+ </div>
+    <div style="display: flex;justify-content: center;text-align: center;">
+       
+    <table style="    width: 80%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 30px;
+">
+   <thead>
+    <tr>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>CATEGORY</th>
+        <th>INSTOCK</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr *ngFor="let product of product;let i=index ">
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.instock}}</td>
+        <td><button style="background-color: red;" (click)="deleteProduct(i)">DELETE</button><button style="background-color: blue;" (click)="editProduct(product,i)">EDIT</button></td>
+    </tr>
+  
+   </tbody>
+</table>
+</div>
